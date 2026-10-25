@@ -1,0 +1,105 @@
+================================================================================
+ESE - ENHANCED SAMPLING VIA ENCODER
+Detailed Metrics Report
+Generated: 2025-11-15 20:25:16
+================================================================================
+
+FINAL RESULTS SUMMARY
+--------------------------------------------------------------------------------
+Best Method: QUANTUM
+Best Score: 0.7405
+Target Achieved: YES
+
+CLUSTERING METRICS BY METHOD
+--------------------------------------------------------------------------------
+Quantum Spectral: 0.7405
+RBF Spectral:     0.2959
+K-Means:          0.4801
+
+DETAILED RESULTS BY K
+--------------------------------------------------------------------------------
+
+Quantum Spectral:
+  k=2: silhouette=0.7405
+  k=3: silhouette=0.6263
+  k=4: silhouette=0.6211
+
+RBF Spectral:
+  k=2: silhouette=0.2548
+  k=3: silhouette=0.2803
+  k=4: silhouette=0.2959
+
+K-Means:
+  k=2: silhouette=0.4189
+  k=3: silhouette=0.4801
+  k=4: silhouette=0.3919
+
+CONFIGURATION PARAMETERS
+--------------------------------------------------------------------------------
+data_path: C:\Users\Jsh Agarwal\OneDrive\Desktop\DA\ESE\asia_region_final.csv
+output_path: C:\Users\Jsh Agarwal\OneDrive\Desktop\DA\ESE\ESE_Report.pdf
+max_samples: 186562
+max_features: 15
+outlier_quantiles: (0.01, 0.99)
+random_seed: 42
+use_imputation: False
+imputation_method: knn
+knn_neighbors: 5
+use_spectral_interpolation: False
+wavelengths: [440, 675, 870, 1020]
+val_split: 0.15
+split_method: random
+latent_dim: 4
+encoder_layers: [256, 128, 64]
+decoder_layers: [64, 128, 256]
+activation: relu
+epochs: 100
+batch_size: 512
+learning_rate: 0.0003
+early_stopping_patience: 20
+use_batch_norm: True
+dropout_rate: 0.2
+density_method: knn
+density_knn: 20
+density_percentile: 10
+synthesis_knn: 5
+interpolation_range: (0.4, 0.6)
+noise_std: 0.005
+z_score_threshold: 5.0
+use_quantum: True
+quantum_backend: pennylane
+n_qubits: 4
+pqc_depth: 3
+use_data_reuploading: True
+quantum_kernel_samples: 15000
+cluster_method: quantum_spectral
+n_clusters_range: [2, 3, 4]
+clustering_affinity: precomputed
+use_ensemble_clustering: False
+n_ensemble_runs: 5
+tf_inter_threads: 4
+tf_intra_threads: 4
+n_jobs: -1
+use_subsampled_eval: True
+synth_fraction_cap: 0.02
+synth_ks_threshold: 0.05
+synth_density_threshold: 0.7
+synth_min_features_pass: 5
+kernel_power: 1.0
+kernel_gamma: 0.2
+kernel_adaptive_tuning: True
+kernel_normalize_scale: True
+use_clustering_finetuning: False
+finetuning_epochs: 5
+finetuning_lambda: 0.01
+finetuning_n_clusters: 5
+enable_quick_fixes: True
+quick_fix_synth_reduce: 0.5
+quick_fix_latent_increase: 2
+sil_latent_vs_kernel_threshold: 0.05
+use_feature_selection: False
+feature_variance_threshold: 0.01
+use_pca_preprocessing: False
+pca_components: 0.95
+use_robust_scaling: False
+use_cosine_annealing: False

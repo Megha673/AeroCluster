@@ -1,0 +1,44 @@
+%%{init: {'theme':'base', 'themeVariables': {'background':'#ffffff', 'primaryColor':'#e3f2fd', 'primaryTextColor':'#000000', 'primaryBorderColor':'#1976d2', 'lineColor':'#1976d2', 'secondaryColor':'#bbdefb', 'tertiaryColor':'#90caf9', 'clusterBkg':'#ffffff', 'clusterBorder':'#1976d2', 'edgeLabelBackground':'#ffffff', 'fontFamily':'arial', 'fontSize':'10px'}, 'flowchart': {'nodeSpacing': 15, 'rankSpacing': 20, 'padding': 5, 'curve': 'basis'}}}%%
+
+graph TD
+    A["AERONET Asia<br/>41 sites, 186k obs"]
+    B["Data Cleaning<br/>& Scaling"]
+    C["Autoencoder<br/>256→128→64→4"]
+    D["Latent Encoding<br/>Z = Encoder(X)"]
+    E["Density Analysis<br/>kNN=20, Flag 10%"]
+    F["Synthetic Gen<br/>z + λΔ"]
+    G["Original Data"]
+    H["Decode<br/>Synthetic"]
+    I["Safety Filters<br/>Bounds, KS, Cap"]
+    J["Balanced Dataset"]
+    K["Kernel Comp<br/>Angle→RBF"]
+    L["Clustering<br/>QS, RBF, KMeans"]
+    M["Visualization<br/>& Reporting"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|Minor class| F
+    E -->|Major class| G
+    F --> H
+    H --> I
+    I --> J
+    G --> J
+    J --> K
+    K --> L
+    L --> M
+
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    style B fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    style C fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000000
+    style D fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    style E fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000000
+    style F fill:#90caf9,stroke:#0d47a1,stroke-width:2px,color:#000000
+    style G fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    style H fill:#90caf9,stroke:#0d47a1,stroke-width:2px,color:#000000
+    style I fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000000
+    style J fill:#64b5f6,stroke:#0d47a1,stroke-width:3px,color:#000000
+    style K fill:#bbdefb,stroke:#1565c0,stroke-width:2px,color:#000000
+    style L fill:#90caf9,stroke:#0d47a1,stroke-width:2px,color:#000000
+    style M fill:#64b5f6,stroke:#0d47a1,stroke-width:3px,color:#000000

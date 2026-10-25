@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1600 650" xmlns="http://www.w3.org/2000/svg" width="800" height="325">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="black" />
+    </marker>
+  </defs>
+  
+  <!-- ROW 1 (Left to Right) -->
+  
+  <!-- AERONET ASIA DATASET -->
+  <rect x="20" y="20" width="280" height="70" fill="white" stroke="black" stroke-width="2"/>
+  <text x="160" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">AERONET ASIA DATASET</text>
+  <text x="160" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">(41 Sites, 186,562 rows)</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="300" y1="55" x2="340" y2="55" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Data Cleaning & Preprocessing -->
+  <rect x="340" y="20" width="280" height="90" fill="white" stroke="black" stroke-width="2"/>
+  <text x="480" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Data Cleaning &amp; Preprocessing</text>
+  <text x="480" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Missing-value handling</text>
+  <text x="480" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Quantile clipping, Physical constraints</text>
+  <text x="480" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• StandardScaler normalization</text>
+  <text x="480" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"></text>
+  
+  <!-- Arrow 2 -->
+  <line x1="620" y1="65" x2="660" y2="65" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Baseline Classical Clustering -->
+  <rect x="660" y="20" width="280" height="70" fill="white" stroke="black" stroke-width="2"/>
+  <text x="800" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Baseline Classical Clustering</text>
+  <text x="800" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">(Exp-9: K-Means, GMM)</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="940" y1="55" x2="980" y2="55" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Autoencoder Training -->
+  <rect x="980" y="20" width="280" height="85" fill="white" stroke="black" stroke-width="2"/>
+  <text x="1120" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Autoencoder Training</text>
+  <text x="1120" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Encoder → Latent(4D) → Decoder</text>
+  <text x="1120" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Loss = MSE, Early Stopping</text>
+  <text x="1120" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Epochs: 50-100</text>
+  
+  <!-- Arrow down and right -->
+  <line x1="1260" y1="62" x2="1320" y2="62" stroke="black" stroke-width="2"/>
+  <line x1="1320" y1="62" x2="1320" y2="220" stroke="black" stroke-width="2"/>
+  <line x1="1320" y1="220" x2="1260" y2="220" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- ROW 2 (Right to Left) -->
+  
+  <!-- Latent-Space Density Estimation -->
+  <rect x="980" y="180" width="280" height="85" fill="white" stroke="black" stroke-width="2"/>
+  <text x="1120" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Latent-Space Density Estim.</text>
+  <text x="1120" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">KNN Density (k=20)</text>
+  <text x="1120" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Low-density = bottom 10%</text>
+  <text x="1120" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Identify underrepresented regions</text>
+  
+  <!-- Arrow -->
+  <line x1="980" y1="222" x2="940" y2="222" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Decision Diamond -->
+  <polygon points="800,222 880,260 800,298 720,260" fill="white" stroke="black" stroke-width="2"/>
+  <text x="800" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Low-density</text>
+  <text x="800" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">region?</text>
+  
+  <!-- Arrow - Yes -->
+  <line x1="720" y1="260" x2="680" y2="260" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="705" y="250" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Yes</text>
+  
+  <!-- Synthetic Latent Generation -->
+  <rect x="400" y="210" width="280" height="95" fill="white" stroke="black" stroke-width="2"/>
+  <text x="540" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Synthetic Latent Generation</text>
+  <text x="540" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• kNN interpolation</text>
+  <text x="540" y="261" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Added noise for diversity</text>
+  <text x="540" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Decoder projection, Safety filters</text>
+  <text x="540" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">(KS test, bounds)</text>
+  
+  <!-- Arrow -->
+  <line x1="400" y1="257" x2="360" y2="257" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Balanced Dataset -->
+  <rect x="80" y="220" width="280" height="70" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Balanced Dataset</text>
+  <text x="220" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">(Original + Synthetic Data)</text>
+  
+  <!-- Arrow down and right -->
+  <line x1="80" y1="255" x2="20" y2="255" stroke="black" stroke-width="2"/>
+  <line x1="20" y1="255" x2="20" y2="420" stroke="black" stroke-width="2"/>
+  <line x1="20" y1="420" x2="80" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- ROW 3 (Left to Right) -->
+  
+  <!-- Quantum-Kernel Proxy Computation -->
+  <rect x="80" y="380" width="280" height="80" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Quantum-Kernel Proxy Comp.</text>
+  <text x="220" y="417" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Angle encoding</text>
+  <text x="220" y="431" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• RBF kernel + adaptive γ</text>
+  <text x="220" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• PSD enforcement</text>
+  
+  <!-- Arrow -->
+  <line x1="360" y1="420" x2="400" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Clustering & Evaluation -->
+  <rect x="400" y="370" width="280" height="100" fill="white" stroke="black" stroke-width="2"/>
+  <text x="540" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Clustering &amp; Evaluation</text>
+  <text x="540" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Quantum Spectral Clustering</text>
+  <text x="540" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• RBF Spectral Clustering</text>
+  <text x="540" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• MiniBatch K-Means</text>
+  <text x="540" y="449" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Metrics: Silhouette, DBI, CH Index</text>
+  
+  <!-- Arrow -->
+  <line x1="680" y1="420" x2="720" y2="420" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Visualization & Reporting -->
+  <rect x="720" y="370" width="280" height="100" fill="white" stroke="black" stroke-width="2"/>
+  <text x="860" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Visualization &amp; Reporting</text>
+  <text x="860" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Training curves (loss/validation)</text>
+  <text x="860" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Latent space maps (t-SNE/PCA)</text>
+  <text x="860" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Kernel heatmaps</text>
+  <text x="860" y="449" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">• Cluster summaries &amp; statistics</text>
+</svg>

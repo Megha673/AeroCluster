@@ -1,0 +1,14 @@
+# AeroCluster — Python dependencies
+# Install with: python -m pip install -r requirements.txt
+
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+tensorflow
+Pillow
+Cartopy
+umap-learn
+joblib
